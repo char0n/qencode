@@ -14,8 +14,8 @@ defmodule Qencode do
   To get started, first access the Qencode API by acquiring a session token.
   You will pass this token as a param when you use the create task.
   """
-  @spec get_session_token(bitstring) :: bitstring
-  def get_session_token(api_key) when is_binary(api_key) do
+  @spec get_session_token!(bitstring) :: bitstring
+  def get_session_token!(api_key) when is_binary(api_key) do
     Logger.debug("Getting session token from API Key")
     {:ok, conn} = Mint.HTTP.connect(:https, @api_host, 443)
 

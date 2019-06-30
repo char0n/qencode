@@ -10,7 +10,7 @@ defmodule QencodeTest do
     end
 
     test "should return session token", %{api_key: api_key} do
-      session_token = Qencode.get_session_token(api_key)
+      session_token = Qencode.get_session_token!(api_key)
 
       assert is_binary(session_token)
       assert String.length(session_token) === 32
@@ -20,7 +20,7 @@ defmodule QencodeTest do
   describe "get_session_token: given invalid api_key" do
     test "should raise MatchError" do
       assert_raise MatchError, fn ->
-        Qencode.get_session_token("invalid_api_key")
+        Qencode.get_session_token!("invalid_api_key")
       end
     end
   end
