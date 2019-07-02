@@ -26,7 +26,7 @@ defmodule Qencode.MixProject do
       {:credo, "~> 1.0.0", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 0.4", only: [:dev, :test], runtime: false},
       {:castore, "~> 0.1.0"},
-      {:mint, "~> 0.2.0", runtime: true},
+      {:simplehttp, "~> 0.5.1", runtime: true},
       {:poison, "~> 4.0", runtime: true}
     ]
   end

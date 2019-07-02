@@ -15,6 +15,7 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/jason" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/mint" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/poison" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/simplehttp" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/bunt" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/castore" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/credo" />
@@ -22,6 +23,7 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/jason" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/mint" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/poison" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/simplehttp" />
       <excludeFolder url="file://$MODULE_DIR$/assets/node_modules/phoenix" />
       <excludeFolder url="file://$MODULE_DIR$/assets/node_modules/phoenix_html" />
       <excludeFolder url="file://$MODULE_DIR$/cover" />
@@ -50,5 +52,8 @@
     <orderEntry type="library" name="jsone" level="project" />
     <orderEntry type="library" name="jiffy" level="project" />
     <orderEntry type="library" name="json" level="project" />
+    <orderEntry type="library" name="simplehttp" level="project" />
+    <orderEntry type="library" name="cowboy" level="project" />
+    <orderEntry type="library" name="plug" level="project" />
   </component>
 </module>
