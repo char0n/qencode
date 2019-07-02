@@ -7,7 +7,15 @@ defmodule Qencode.MixProject do
       version: "0.1.0",
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      # Docs
+      name: "Qencode",
+      source_url: "https://github.com/char0n/qencode",
+      homepage_url: "https://github.com/char0n/qencode",
+      docs: [
+        main: "readme", # The main page in the docs
+        extras: ["README.md", "LICENSE.md"]
+      ]
     ]
   end
 
@@ -27,7 +35,8 @@ defmodule Qencode.MixProject do
       {:dialyxir, "~> 0.4", only: [:dev, :test], runtime: false},
       {:castore, "~> 0.1.0"},
       {:simplehttp, "~> 0.5.1", runtime: true},
-      {:poison, "~> 4.0", runtime: true}
+      {:poison, "~> 4.0", runtime: true},
+      {:ex_doc, "~> 0.19", only: :dev, runtime: false},
     ]
   end
 end
