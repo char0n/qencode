@@ -28,6 +28,7 @@ defmodule Qencode.Task do
   """
   @spec start!(map, keyword) :: map
   def start!(%{id: id, video_url: video_url, profiles: profiles}, opts \\ []) do
+    Logger.debug("Starting a new Task(#{id})")
     payload = Keyword.merge([task_token: id, uri: video_url, profiles: profiles], opts)
     %{"status_url" => status_url} = Client.make_request!("/v1/start_encode", payload)
     %{id: id, video_url: video_url, profiles: profiles, status_url: status_url}
@@ -36,6 +37,7 @@ defmodule Qencode.Task do
   @doc "Gets status for one transcoding Task/Job."
   @spec status!(binary) :: map
   def status!(id) when is_binary(id) do
+    Logger.debug("Getting status of a Task(#{id})")
     payload = [task_tokens: id]
     %{"statuses" => statuses} = Client.make_request!("/v1/status", payload)
     statuses[id]
@@ -44,6 +46,7 @@ defmodule Qencode.Task do
   @doc "Gets status for multiple transcoding Tasks/Jobs."
   @spec status!(list) :: map
   def status!(ids) when is_list(ids) do
+    Logger.debug("Getting status of a Tasks(#{Enum.join(ids, ",")})")
     payload = ids |> Enum.map(fn id -> {:task_tokens, id} end)
     response = Client.make_request!("/v1/status", payload)
     %{"statuses" => statuses} = response
