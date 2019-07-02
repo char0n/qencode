@@ -33,4 +33,8 @@ defmodule Qencode.Client do
 
     Poison.decode!(response.body)
   end
+
+  @doc "Helper for returning common request headers"
+  @spec headers() :: map
+  def headers(), do: @headers
 end

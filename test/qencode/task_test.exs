@@ -5,6 +5,8 @@ defmodule Qencode.TaskTest do
   use ExUnit.Case
   doctest Qencode.Task
 
+  @test_video_url "https://github.com/char0n/qencode/raw/master/test/data/test.mp4"
+
   describe "create: given valid request payload" do
     setup do
       api_key = System.get_env("QENCODE_API_KEY")
@@ -37,7 +39,7 @@ defmodule Qencode.TaskTest do
       task =
         Task.create!(client)
         |> Map.put(:profiles, System.get_env("QENCODE_PROFILES"))
-        |> Map.put(:video_url, "https://github.com/char0n/qencode/raw/master/test/data/test.mp4")
+        |> Map.put(:video_url, @test_video_url)
 
       %{task: task}
     end
@@ -63,7 +65,7 @@ defmodule Qencode.TaskTest do
       task =
         Task.create!(client)
         |> Map.put(:profiles, System.get_env("QENCODE_PROFILES"))
-        |> Map.put(:video_url, "https://github.com/char0n/qencode/raw/master/test/data/test.mp4")
+        |> Map.put(:video_url, @test_video_url)
 
       %{task: task}
     end
@@ -87,12 +89,12 @@ defmodule Qencode.TaskTest do
       task1 =
         Task.create!(client)
         |> Map.put(:profiles, System.get_env("QENCODE_PROFILES"))
-        |> Map.put(:video_url, "https://github.com/char0n/qencode/raw/master/test/data/test.mp4")
+        |> Map.put(:video_url, @test_video_url)
 
       task2 =
         Task.create!(client)
         |> Map.put(:profiles, System.get_env("QENCODE_PROFILES"))
-        |> Map.put(:video_url, "https://github.com/char0n/qencode/raw/master/test/data/test.mp4")
+        |> Map.put(:video_url, @test_video_url)
 
       %{task1: task1, task2: task2}
     end
@@ -104,6 +106,27 @@ defmodule Qencode.TaskTest do
 
       assert is_map(statuses[task1.id])
       assert is_map(statuses[task2.id])
+    end
+  end
+
+  describe "status_full: given status url and Task/Job id" do
+    setup do
+      api_key = System.get_env("QENCODE_API_KEY")
+      client = Client.new!(api_key)
+
+      task =
+        Task.create!(client)
+        |> Map.put(:profiles, System.get_env("QENCODE_PROFILES"))
+        |> Map.put(:video_url, @test_video_url)
+
+      %{task: task}
+    end
+
+    test "should return full Task/Job status", %{task: task} do
+      %{id: id, status_url: status_url} = Task.start!(task)
+      task_full_statuses = Task.status_full!(id, status_url)
+
+      assert is_map(task_full_statuses[id])
     end
   end
 end

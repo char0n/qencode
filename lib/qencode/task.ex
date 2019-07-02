@@ -50,4 +50,20 @@ defmodule Qencode.Task do
     %{"statuses" => statuses} = response
     statuses
   end
+
+  @doc "Gets full status for Task that is being processed."
+  @spec status_full!(binary, binary) :: map
+  def status_full!(id, status_url) when is_binary(id) and is_binary(status_url) do
+    Logger.debug("Getting full status of a Task(#{id})")
+    payload = [{:"task_tokens[]", id}]
+
+    {:ok, response} =
+      SimpleHttp.post(status_url,
+        params: payload,
+        headers: Client.headers()
+      )
+
+    %{"statuses" => statuses} = Poison.decode!(response.body)
+    statuses
+  end
 end
