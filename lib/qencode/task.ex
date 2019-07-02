@@ -37,9 +37,7 @@ defmodule Qencode.Task do
   @doc "Gets status for one transcoding Task/Job."
   @spec status!(binary) :: map
   def status!(id) when is_binary(id) do
-    Logger.debug("Getting status of a Task(#{id})")
-    payload = [task_tokens: id]
-    %{"statuses" => statuses} = Client.make_request!("/v1/status", payload)
+    statuses = status!([id])
     statuses[id]
   end
 
@@ -47,7 +45,7 @@ defmodule Qencode.Task do
   @spec status!(list) :: map
   def status!(ids) when is_list(ids) do
     Logger.debug("Getting status of a Tasks(#{Enum.join(ids, ",")})")
-    payload = ids |> Enum.map(fn id -> {:task_tokens, id} end)
+    payload = ids |> Enum.map(fn id -> {:"task_tokens[]", id} end)
     response = Client.make_request!("/v1/status", payload)
     %{"statuses" => statuses} = response
     statuses
