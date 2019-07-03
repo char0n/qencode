@@ -1,3 +1,8 @@
+[![Hex version badge](https://img.shields.io/hexpm/v/qencode.svg)](https://hex.pm/packages/qencode)
+[![License badge](https://img.shields.io/hexpm/l/qencode.svg)](https://github.com/char0n/qencode/blob/master/LICENSE.md)
+[![Build status badge](https://img.shields.io/circleci/project/github/char0n/qencode/master.svg)](https://circleci.com/gh/char0n/qencode/tree/master)
+[![Coverage Status](https://coveralls.io/repos/github/char0n/qencode/badge.svg?branch=master)](https://coveralls.io/github/char0n/qencode?branch=master)
+
 # Qencode
 
 Full featured video transcoding using the Qencode API that can be
