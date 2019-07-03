@@ -11,7 +11,7 @@ defmodule Qencode.MixProject do
       # Docs
       name: "Qencode",
       source_url: "https://github.com/char0n/qencode",
-      homepage_url: "https://github.com/char0n/qencode",
+      homepage_url: "https://hexdocs.pm/qencode/",
       docs: [
         # The main page in the docs
         main: "readme",
