@@ -14,6 +14,8 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/dialyxir" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/earmark" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/ex_doc" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/git_cli" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/git_ops" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/jason" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/makeup" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/makeup_elixir" />
@@ -65,5 +67,8 @@
     <orderEntry type="library" name="cmark" level="project" />
     <orderEntry type="library" name="makeup" level="project" />
     <orderEntry type="library" name="nimble_parsec" level="project" />
+    <orderEntry type="library" name="git_ops" level="project" />
+    <orderEntry type="library" name="git_cli" level="project" />
+    <orderEntry type="library" name="temp" level="project" />
   </component>
 </module>

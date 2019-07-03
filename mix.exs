@@ -13,8 +13,9 @@ defmodule Qencode.MixProject do
       source_url: "https://github.com/char0n/qencode",
       homepage_url: "https://github.com/char0n/qencode",
       docs: [
-        main: "readme", # The main page in the docs
-        extras: ["README.md", "LICENSE.md"]
+        # The main page in the docs
+        main: "readme",
+        extras: ["README.md", "CHANGELOG.md", "LICENSE.md"]
       ]
     ]
   end
@@ -37,6 +38,7 @@ defmodule Qencode.MixProject do
       {:simplehttp, "~> 0.5.1", runtime: true},
       {:poison, "~> 4.0", runtime: true},
       {:ex_doc, "~> 0.19", only: :dev, runtime: false},
+      {:git_ops, "~> 0.6.0", only: [:dev]}
     ]
   end
 end
