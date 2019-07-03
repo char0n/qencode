@@ -15,6 +15,7 @@ jobs:
       - run: mix compile --warnings-as-errors --force
       - run: mix format --check-formatted --dry-run
       - run: mix credo
+      - run: mix dialyzer
       - run: mix docs
       - store_artifacts:
           path: ./doc
