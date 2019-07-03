@@ -17,6 +17,7 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/git_cli" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/git_ops" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/jason" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/junit_formatter" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/makeup" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/makeup_elixir" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/mint" />
