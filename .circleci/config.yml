@@ -6,7 +6,7 @@ jobs:
       - image: circleci/elixir:1.8.2-otp-22
     environment:
       - MIX_ENV: test
-    working_directory: ~/qencode
+    working_directory: ~/repo
     steps:
       - checkout
       - run: mix local.hex --force
