@@ -36,5 +36,5 @@ defmodule Qencode.Client do
 
   @doc "Helper for returning common request headers"
   @spec headers() :: map
-  def headers(), do: @headers
+  def headers, do: @headers
 end

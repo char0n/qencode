@@ -1,7 +1,7 @@
 defmodule Qencode.TaskTest do
   @moduledoc false
-  alias Qencode.Task
   alias Qencode.Client
+  alias Qencode.Task
   use ExUnit.Case
   doctest Qencode.Task
 
@@ -36,8 +36,10 @@ defmodule Qencode.TaskTest do
       api_key = System.get_env("QENCODE_API_KEY")
       client = Client.new!(api_key)
 
+      task = Task.create!(client)
+
       task =
-        Task.create!(client)
+        task
         |> Map.put(:profiles, System.get_env("QENCODE_PROFILES"))
         |> Map.put(:video_url, @test_video_url)
 
@@ -62,8 +64,10 @@ defmodule Qencode.TaskTest do
       api_key = System.get_env("QENCODE_API_KEY")
       client = Client.new!(api_key)
 
+      task = Task.create!(client)
+
       task =
-        Task.create!(client)
+        task
         |> Map.put(:profiles, System.get_env("QENCODE_PROFILES"))
         |> Map.put(:video_url, @test_video_url)
 
@@ -86,13 +90,17 @@ defmodule Qencode.TaskTest do
       api_key = System.get_env("QENCODE_API_KEY")
       client = Client.new!(api_key)
 
+      task1 = Task.create!(client)
+
       task1 =
-        Task.create!(client)
+        task1
         |> Map.put(:profiles, System.get_env("QENCODE_PROFILES"))
         |> Map.put(:video_url, @test_video_url)
 
+      task2 = Task.create!(client)
+
       task2 =
-        Task.create!(client)
+        task2
         |> Map.put(:profiles, System.get_env("QENCODE_PROFILES"))
         |> Map.put(:video_url, @test_video_url)
 
@@ -114,8 +122,10 @@ defmodule Qencode.TaskTest do
       api_key = System.get_env("QENCODE_API_KEY")
       client = Client.new!(api_key)
 
+      task = Task.create!(client)
+
       task =
-        Task.create!(client)
+        task
         |> Map.put(:profiles, System.get_env("QENCODE_PROFILES"))
         |> Map.put(:video_url, @test_video_url)
 
