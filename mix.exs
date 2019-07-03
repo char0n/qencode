@@ -1,5 +1,6 @@
 defmodule Qencode.MixProject do
   use Mix.Project
+  @github_url "https://github.com/char0n/qencode"
 
   def project do
     [
@@ -8,10 +9,20 @@ defmodule Qencode.MixProject do
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
+      files: ~w(mix.exs lib LICENSE.md README.md CHANGELOG.md .formatter.exs),
+      package: [
+        maintainers: ["Vladimír Gorej"],
+        licenses: ["BSD-3-Clause"],
+        links: %{
+          "GitHub" => @github_url
+        }
+      ],
       # Docs
       name: "Qencode",
-      source_url: "https://github.com/char0n/qencode",
+      source_url: @github_url,
       homepage_url: "https://hexdocs.pm/qencode/",
+      description:
+        "Full featured video transcoding using the Qencode API that can be easily modified for your website or application.",
       docs: [
         # The main page in the docs
         main: "readme",
