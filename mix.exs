@@ -16,6 +16,13 @@ defmodule Qencode.MixProject do
         # The main page in the docs
         main: "readme",
         extras: ["README.md", "CHANGELOG.md", "LICENSE.md"]
+      ],
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
       ]
     ]
   end
@@ -38,7 +45,8 @@ defmodule Qencode.MixProject do
       {:simplehttp, "~> 0.5.1", runtime: true},
       {:poison, "~> 4.0", runtime: true},
       {:ex_doc, "~> 0.19", only: :dev, runtime: false},
-      {:git_ops, "~> 0.6.0", only: [:dev]}
+      {:git_ops, "~> 0.6.0", only: [:dev]},
+      {:excoveralls, "~> 0.10", only: :test}
     ]
   end
 end

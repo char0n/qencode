@@ -25,12 +25,21 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/simplehttp" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/bunt" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/castore" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/certifi" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/credo" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/dialyxir" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/excoveralls" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/hackney" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/idna" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/jason" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/metrics" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/mimerl" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/mint" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/parse_trans" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/poison" />
       <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/simplehttp" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/ssl_verify_fun" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/test/lib/unicode_util_compat" />
       <excludeFolder url="file://$MODULE_DIR$/assets/node_modules/phoenix" />
       <excludeFolder url="file://$MODULE_DIR$/assets/node_modules/phoenix_html" />
       <excludeFolder url="file://$MODULE_DIR$/cover" />
@@ -70,5 +79,8 @@
     <orderEntry type="library" name="git_ops" level="project" />
     <orderEntry type="library" name="git_cli" level="project" />
     <orderEntry type="library" name="temp" level="project" />
+    <orderEntry type="library" name="mock" level="project" />
+    <orderEntry type="library" name="meck" level="project" />
+    <orderEntry type="library" name="hackney" level="project" />
   </component>
 </module>
