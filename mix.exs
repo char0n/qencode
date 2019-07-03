@@ -46,7 +46,8 @@ defmodule Qencode.MixProject do
       {:poison, "~> 4.0", runtime: true},
       {:ex_doc, "~> 0.19", only: [:dev, :test], runtime: false},
       {:git_ops, "~> 0.6.0", only: [:dev]},
-      {:excoveralls, "~> 0.10", only: :test}
+      {:excoveralls, "~> 0.10", only: :test},
+      {:junit_formatter, "~> 3.0", only: [:dev, :test]}
     ]
   end
 end

@@ -50,6 +50,10 @@ config :logger,
     [level_lower_than: :info]
   ]
 
+config :junit_formatter,
+       report_file: "test-junit-report.xml",
+       print_report_file: true
+
 # It is also possible to import configuration files, relative to this
 # directory. For example, you can emulate configuration per environment
 # by uncommenting the line below and defining dev.exs, test.exs and such.

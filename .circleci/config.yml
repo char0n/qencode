@@ -18,3 +18,5 @@ jobs:
       - run: mix docs
       - store_artifacts:
           path: ./doc
+      - store_test_results:
+          path: ./_build/test/lib/qencode/
