@@ -16,3 +16,5 @@ jobs:
       - run: mix format --check-formatted --dry-run
       - run: mix credo
       - run: mix docs
+      - store_artifacts:
+          path: ./doc
