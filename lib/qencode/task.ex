@@ -37,6 +37,16 @@ defmodule Qencode.Task do
     %{id: id, video_url: video_url, profiles: profiles, status_url: status_url}
   end
 
+  @spec start!(map, keyword) :: map
+  def start!(%{id: id, video_url: video_url} = data, opts \\ []) do
+    profiles = Application.get_env(:qencode, :profiles, nil)
+    if not is_nil(profiles) do
+      start!(data |> Map.put(:profiles, profiles))
+    else
+      raise QencodeError, "Qencode profiles not provided by configuration"
+    end
+  end
+
   @doc "Gets status for one transcoding Task/Job."
   @spec status!(binary) :: map
   def status!(id) when is_binary(id) do

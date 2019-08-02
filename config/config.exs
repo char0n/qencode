@@ -21,7 +21,10 @@ use Mix.Config
 #     config :logger, level: :info
 #
 
-config :qencode, :json_library, Jason
+config :qencode,
+  json_library: Jason,
+  api_key: System.get_env("QENCODE_API_KEY"),
+  profiles: System.get_env("QENCODE_PROFILES")
 
 config :git_ops,
   mix_project: Qencode.MixProject,
