@@ -14,9 +14,8 @@ defmodule Qencode.Task do
   Creates a transcoding job and returns it's token, which is needed to start transcoding jobs.
   """
   @spec create!(map) :: map
-  def create!(client) do
+  def create!(%{session_token: session_token} = _client) do
     Logger.debug("Creating a new task")
-    %{session_token: session_token} = client
     payload = [token: session_token]
 
     %{"task_token" => task_token, "upload_url" => upload_url} =
@@ -29,8 +28,11 @@ defmodule Qencode.Task do
   Starting a Task using Profiles.
   Starts a transcoding Task/Job based on your selected presets.
   """
+
+  def start!(data, opts \\ [])
+
   @spec start!(map, keyword) :: map
-  def start!(%{id: id, video_url: video_url, profiles: profiles}, opts \\ []) do
+  def start!(%{id: id, video_url: video_url, profiles: profiles}, opts) do
     Logger.debug("Starting a new Task(#{id})")
     payload = Keyword.merge([task_token: id, uri: video_url, profiles: profiles], opts)
     %{"status_url" => status_url} = Client.make_request!("/v1/start_encode", payload)
@@ -38,13 +40,13 @@ defmodule Qencode.Task do
   end
 
   @spec start!(map, keyword) :: map
-  def start!(%{id: id, video_url: video_url} = data, opts \\ []) do
+  def start!(data, opts) do
     profiles = Application.get_env(:qencode, :profiles, nil)
 
     if is_nil(profiles) do
       raise QencodeError, "Qencode profiles not provided by configuration"
     else
-      start!(data |> Map.put(:profiles, profiles))
+      start!(data |> Map.put(:profiles, profiles), opts)
     end
   end
 
