@@ -18,10 +18,11 @@ defmodule Qencode.Client do
   @spec new!() :: map
   def new!() do
     api_key = Application.get_env(:qencode, :api_key, nil)
-    if not is_nil(api_key) do
-      new!(api_key)
-    else
+
+    if is_nil(api_key) do
       raise QencodeError, "API key not provided by configuration"
+    else
+      new!(api_key)
     end
   end
 

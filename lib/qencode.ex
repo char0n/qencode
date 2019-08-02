@@ -1,5 +1,5 @@
 defmodule Qencode do
-  @moduledoc "Entry point module of Qencode library"
+  @moduledoc "Entry point module of Qencode library."
 
   @doc "Returns the configured JSON encoding library for Qencode."
   def json_library do
