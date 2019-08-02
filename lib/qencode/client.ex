@@ -13,6 +13,20 @@ defmodule Qencode.Client do
 
   @doc """
   Creating new data representation of Qencode client.
+  Uses application configuration to get API key.
+  """
+  @spec new!() :: map
+  def new!() do
+    api_key = Application.get_env(:qencode, :api_key, nil)
+    if not is_nil(api_key) do
+      new!(api_key)
+    else
+      raise QencodeError, "API key not provided by configuration"
+    end
+  end
+
+  @doc """
+  Creating new data representation of Qencode client.
   """
   @spec new!(bitstring) :: map
   def new!(api_key) when is_binary(api_key) do
