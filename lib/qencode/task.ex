@@ -40,10 +40,11 @@ defmodule Qencode.Task do
   @spec start!(map, keyword) :: map
   def start!(%{id: id, video_url: video_url} = data, opts \\ []) do
     profiles = Application.get_env(:qencode, :profiles, nil)
-    if not is_nil(profiles) do
-      start!(data |> Map.put(:profiles, profiles))
-    else
+
+    if is_nil(profiles) do
       raise QencodeError, "Qencode profiles not provided by configuration"
+    else
+      start!(data |> Map.put(:profiles, profiles))
     end
   end
 
