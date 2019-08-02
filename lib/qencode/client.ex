@@ -4,6 +4,8 @@ defmodule Qencode.Client do
   """
   require Logger
 
+  import Qencode, only: [json_library: 0]
+
   @host "https://api.qencode.com"
   @headers %{
     "Content-Type" => "application/x-www-form-urlencoded"
@@ -31,7 +33,7 @@ defmodule Qencode.Client do
         headers: @headers
       )
 
-    Poison.decode!(response.body)
+    json_library().decode!(response.body)
   end
 
   @doc "Helper for returning common request headers"

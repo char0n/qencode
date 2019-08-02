@@ -21,6 +21,8 @@ use Mix.Config
 #     config :logger, level: :info
 #
 
+config :qencode, :json_library, Jason
+
 config :git_ops,
   mix_project: Qencode.MixProject,
   changelog_file: "CHANGELOG.md",
