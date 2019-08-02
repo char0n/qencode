@@ -4,6 +4,9 @@ defmodule Qencode.Task do
   """
 
   require Logger
+
+  import Qencode, only: [json_library: 0]
+
   alias Qencode.Client
 
   @doc """
@@ -63,7 +66,7 @@ defmodule Qencode.Task do
         headers: Client.headers()
       )
 
-    %{"statuses" => statuses} = Poison.decode!(response.body)
+    %{"statuses" => statuses} = json_library().decode!(response.body)
     statuses
   end
 end

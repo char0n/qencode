@@ -55,9 +55,9 @@ defmodule Qencode.MixProject do
       {:dialyxir, "~> 0.4", only: [:dev, :test], runtime: false},
       {:castore, "~> 0.1.0"},
       {:simplehttp, "~> 0.5.1", runtime: true},
-      {:poison, "~> 4.0", runtime: true},
       {:ex_doc, "~> 0.19", only: [:dev, :test], runtime: false},
       {:git_ops, "~> 0.6.0", only: [:dev]},
+      {:jason, "~> 1.1"},
       {:excoveralls, "~> 0.10", only: :test},
       {:junit_formatter, "~> 3.0", only: [:dev, :test]}
     ]
