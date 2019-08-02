@@ -5,6 +5,13 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [0.2.0](https://github.com/char0n/qencode/compare/0.1.0...0.2.0) (2019-8-2)
+
+### Features:
+
+* qencode: add support for configuring via mix configuration
+
+
 ## [0.1.0](https://github.com/char0n/qencode/compare/0.1.0...0.1.0) (2019-7-3)
 
 
