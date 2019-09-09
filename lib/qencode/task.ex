@@ -63,6 +63,7 @@ defmodule Qencode.Task do
   @doc "Gets status for multiple transcoding Tasks/Jobs."
   @spec status!(list) :: map
   def status!(ids) when is_list(ids) do
+    # credo:disable-for-next-line
     Logger.debug("Getting status of a Tasks(#{Enum.join(ids, ",")})")
     payload = ids |> Enum.map(fn id -> {:"task_tokens[]", id} end)
     response = Client.make_request!("/v1/status", payload)
