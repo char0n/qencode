@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [0.4.1](https://github.com/char0n/qencode/compare/0.4.0...0.4.1) (2019-9-9)
+
+
+
+
+### Bug Fixes:
+
+* task: fix logging message
+
 ## [0.4.0](https://github.com/char0n/qencode/compare/0.3.0...0.4.0) (2019-9-9)
 
 
