@@ -7,7 +7,7 @@ defmodule Qencode.TaskTest do
 
   @test_video_url "https://github.com/char0n/qencode/raw/master/test/data/test.mp4"
 
-  describe "create/1: given valid request payload" do
+  describe "create!/1: given valid request payload" do
     setup [:create_client]
 
     test "should create new task", %{client: client} do
@@ -19,7 +19,7 @@ defmodule Qencode.TaskTest do
     end
   end
 
-  describe "create/1: given invalid request payload" do
+  describe "create!/1: given invalid request payload" do
     test "should raise MatchError" do
       assert_raise FunctionClauseError, fn ->
         Task.create!(%{})
@@ -27,7 +27,7 @@ defmodule Qencode.TaskTest do
     end
   end
 
-  describe "start/1: given valid request payload" do
+  describe "start!/1: given valid request payload" do
     setup [:create_client, :create_task1]
 
     test "should start encoding task", %{task1: task} do
@@ -58,7 +58,7 @@ defmodule Qencode.TaskTest do
     end
   end
 
-  describe "start/2: given valid request payload" do
+  describe "start!/2: given valid request payload" do
     setup [:create_client, :create_task1]
 
     test "should start encoding task", %{task1: task} do
@@ -74,7 +74,7 @@ defmodule Qencode.TaskTest do
     end
   end
 
-  describe "status/1: given Task/Job id" do
+  describe "status!/1: given Task/Job id" do
     setup [:create_client, :create_task1]
 
     test "should return Task/Job status", %{task1: task} do
@@ -88,7 +88,7 @@ defmodule Qencode.TaskTest do
     end
   end
 
-  describe "status/1: given Task/Job ids" do
+  describe "status!/1: given Task/Job ids" do
     setup [:create_client, :create_task1, :create_task2]
 
     test "should return Task1/Job1 status", %{task1: task1, task2: task2} do
@@ -101,7 +101,7 @@ defmodule Qencode.TaskTest do
     end
   end
 
-  describe "status_full/2: given status url and Task/Job id" do
+  describe "status_full!/2: given status url and Task/Job id" do
     setup [:create_client, :create_task1]
 
     test "should return full Task/Job status", %{task1: task} do
