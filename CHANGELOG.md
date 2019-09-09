@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [0.3.0](https://github.com/char0n/qencode/compare/0.2.0...0.3.0) (2019-9-9)
+
+
+
+
+### Features:
+
+* Task: add support for transfer_method by configuration
+
 ## [0.2.0](https://github.com/char0n/qencode/compare/0.1.0...0.2.0) (2019-8-2)
 
 ### Features:

@@ -16,7 +16,7 @@ by adding `qencode` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:qencode, "~> 0.2.0"}
+    {:qencode, "~> 0.3.0"}
   ]
 end
 ```
