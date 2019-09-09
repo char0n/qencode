@@ -36,7 +36,7 @@ defmodule Qencode.Task do
 
   @spec start!(map, keyword) :: map
   def start!(%{id: id, video_url: video_url, profiles: profiles}, opts) do
-    Logger.debug("QencodeStarting a new Task(#{id})")
+    Logger.debug("Qencode: Starting a new Task(#{id})")
     payload = Keyword.merge([task_token: id, uri: video_url, profiles: profiles], opts)
     %{"status_url" => status_url} = Client.make_request!("/v1/start_encode", payload)
     %{id: id, video_url: video_url, profiles: profiles, status_url: status_url}
