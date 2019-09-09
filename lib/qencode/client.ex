@@ -31,7 +31,7 @@ defmodule Qencode.Client do
   """
   @spec new!(bitstring) :: map
   def new!(api_key) when is_binary(api_key) do
-    Logger.debug("Getting session token from API Key")
+    Logger.debug("Qencode: Getting session token from API Key")
     payload = [api_key: api_key]
     %{"token" => session_token, "error" => 0} = make_request!("/v1/access_token", payload)
     %{session_token: session_token}
@@ -40,7 +40,11 @@ defmodule Qencode.Client do
   @doc "Helper for making Qencode API calls"
   @spec make_request!(binary, keyword) :: any
   def make_request!(path, payload) do
-    Logger.debug("Making POST HTTP request to https://api.qencode.com#{path}")
+    Logger.debug(
+      "Qencode: POST Request to URL: #{@host}#{path} PARAMS: #{inspect(payload)} HEADERS: #{
+        inspect(@headers)
+      }"
+    )
 
     {:ok, response} =
       SimpleHttp.post("#{@host}#{path}",
