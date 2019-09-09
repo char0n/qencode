@@ -29,7 +29,10 @@ defmodule Qencode.Task do
   Starts a transcoding Task/Job based on your selected presets.
   """
 
-  def start!(data, opts \\ [])
+  def start!(
+        data,
+        opts \\ [transfer_method: Application.get_env(:qencode, :transfer_method, nil)]
+      )
 
   @spec start!(map, keyword) :: map
   def start!(%{id: id, video_url: video_url, profiles: profiles}, opts) do
